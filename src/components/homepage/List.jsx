@@ -21,7 +21,7 @@ export default function List() {
    return (
       <>
          <h2 className="text-3xl font-semibold tracking-wide mb-6 text-white">New Release</h2>
-         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 md:gap-6">
+         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-6">
             {lists &&
                lists.map((data) => {
                   return (

@@ -31,7 +31,7 @@ export default function Detail() {
       <div className="container">
          <div className="grid grid-cols-1 md:grid-cols-8 gap-6">
             <div className="col-span-6">
-               <h2 className="text-3xl text-white">
+               <h2 className="text-2xl md:text-3xl text-white">
                   {detail.title} - Episode {detail.episodes}
                </h2>
                <div className="rounded-xl overflow-hidden aspect-video mt-8">
@@ -61,13 +61,13 @@ export default function Detail() {
                         <div className="mt-4 text-white ">
                            <h3 className="text-white text-base md:text-xl font-semibold">Genres :</h3>
                            <div
-                              className="flex flex-col sm:flex-row gap-1
+                              className="flex flex-col sm:flex-row gap-1 text-slate-400 
                                  "
                            >
                               {genres.map((genre, index) => {
                                  return (
                                     <div key={genre.id}>
-                                       <span className="text-slate-400 text-sm md:text-lg">{genre.name}</span>
+                                       <span className="text-sm md:text-lg">{genre.name}</span>
                                        {index !== genres.length - 1 && ", "}
                                     </div>
                                  );
