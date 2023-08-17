@@ -16,9 +16,6 @@ export default function Detail() {
             setDetail(response.data.data);
             setStudio(response.data.data.studios[0]);
             setGenres(response.data.data.genres);
-
-            console.log(detail);
-            console.log(genres);
          } catch (error) {
             console.log("Something went wrong!");
          }
@@ -31,9 +28,7 @@ export default function Detail() {
       <div className="container">
          <div className="grid grid-cols-1 md:grid-cols-8 gap-6">
             <div className="col-span-6">
-               <h2 className="text-2xl md:text-3xl text-white">
-                  {detail.title} - Episode {detail.episodes}
-               </h2>
+               <h2 className="text-2xl md:text-3xl text-white">{detail.title} - Trailer</h2>
                <div className="rounded-xl overflow-hidden aspect-video mt-8">
                   <iframe className="w-full h-full" src={detail.trailer?.embed_url} title="YouTube video player" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                </div>

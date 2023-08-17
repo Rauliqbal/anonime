@@ -11,3 +11,23 @@
       @apply font-poppins bg-[#1a1927];
    }
 }
+
+@layer components {
+}
+
+@media screen and (min-width: 768px) {
+   .swiper-container {
+      width: 768px;
+   }
+}
+
+.swiper-wrapper {
+   padding-bottom: 40px;
+}
+.swiper-pagination-bullet-active {
+   background: #007aff !important;
+}
+
+.swiper-pagination-bullet {
+   background: #fff;
+}

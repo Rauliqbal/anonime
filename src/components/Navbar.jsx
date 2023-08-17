@@ -27,7 +27,7 @@ export default function NavBar() {
                   </Navlink>
                   <div className="md:hidden">
                      <button className="p-2 text-gray-700 rounded-md outline-none focus:ring-gray-400 focus:ring-2" onClick={() => setNavbar(!navbar)}>
-                        {navbar ? (
+                        {navbar.key ? (
                            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-white" viewBox="0 0 20 20" fill="currentColor">
                               <path
                                  fillRule="evenodd"
