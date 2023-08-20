@@ -5,7 +5,7 @@ function App() {
    return (
       <>
          <Navbar />
-         <main className="py-20 md:py-24">
+         <main className="py-20 md:py-28">
             <Router />
          </main>
       </>

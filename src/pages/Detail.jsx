@@ -1,11 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import CardMovie from "../components/CardMovie";
 
 export default function Detail() {
    const [detail, setDetail] = useState([]);
    const [studio, setStudio] = useState([]);
    const [genres, setGenres] = useState([]);
+   const [recomens, setRecomens] = useState([]);
    const params = useParams();
 
    useEffect(() => {
@@ -20,6 +22,18 @@ export default function Detail() {
             console.log("Something went wrong!");
          }
       }
+
+      async function getRecomen() {
+         try {
+            const response = await axios.get(`https://api.jikan.moe/v4/anime/${params.id}/recommendations`);
+
+            setRecomens(response.data.data);
+         } catch (error) {
+            console.log(error);
+         }
+      }
+
+      getRecomen();
 
       getDetail();
    });
@@ -83,8 +97,18 @@ export default function Detail() {
                   <p className=" tracking-wide leading-relaxed text-slate-400 mt-2">{detail.synopsis}</p>
                </div>
             </div>
-            <div>
-               <h2 className="text-3xl text-white">Recommended</h2>
+            <div className="col-span-2">
+               <h2 className="text-2xl text-white">Recommended</h2>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {recomens &&
+                     recomens.slice(0, 6).map((data) => {
+                        return (
+                           <div key={data.mal_id}>
+                              <CardMovie to={`/detail/${data.entry.mal_id}`} src={data.entry.images.webp.image_url} title={data.entry.title} />
+                           </div>
+                        );
+                     })}
+               </div>
             </div>
          </div>
       </div>

@@ -10,6 +10,10 @@
    body {
       @apply font-poppins bg-[#1a1927];
    }
+
+   section {
+      @apply py-8;
+   }
 }
 
 @layer components {
