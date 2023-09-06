@@ -44,7 +44,7 @@ export default function NavBar() {
                   </div>
                </div>
             </div>
-            <div>
+            <div className="md:ml-20">
                <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"}`}>
                   <ul className="items-center justify-center space-y-8 md:flex md:space-x-8 md:space-y-0">
                      {navMenu.map((menu) => (
@@ -54,8 +54,11 @@ export default function NavBar() {
                         </li>
                      ))}
                   </ul>
+
                </div>
+                  
             </div>
+            <form className="ml-auto"><input className="px-4 py-2 outline-none bg-slate-800 rounded-full text-white" type="text" name="" id="" placeholder="Search anime..."/></form>
          </div>
       </nav>
    );
